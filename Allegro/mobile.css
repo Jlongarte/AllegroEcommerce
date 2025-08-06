@@ -1,41 +1,50 @@
 /*HEADER*/
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
+/* Móvil: mostrar el botón y ocultar el menú */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .logo-container {
+    position: relative;
+    left: 0;
+    transform: translateX(0);
+  }
 }
 
 /* Móvil: mostrar el botón y ocultar el menú */
 @media screen and (max-width: 767px) {
   .menu-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: static;
+    align-self: flex-start; /* Por defecto a la izquierda */
+    transition: all 0.3s ease;
   }
 
-  .left-menu {
-    display: none;
-    width: 100%;
+  /* Cuando el botón tiene clase .close-right, lo movemos a la derecha */
+  .menu-toggle.close-right {
+    align-self: flex-end;
+    margin-right: 20px;
   }
 
-  .left-menu.active {
-    display: flex;
-    justify-content: center;
-  }
-
-  .left-menu ul {
+  header {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 10px 0;
+    height: auto;
+    gap: 20px;
+    padding: 20px;
   }
-}
 
-/* Móvil: mostrar el botón y ocultar el menú */
-@media screen and (max-width: 767px) {
-  .menu-toggle {
-    display: block;
+  .logo-container {
+    position: static;
+    transform: none;
+  }
+
+  nav > ul {
+    justify-content: center;
   }
 
   /* Menú oculto inicialmente */
@@ -44,6 +53,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     padding: 20px;
     background-color: aqua;
     flex-direction: column;
