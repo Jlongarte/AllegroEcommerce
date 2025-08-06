@@ -9,6 +9,7 @@
 }
 
 :root {
+  --princial: #fff;
 }
 a {
   text-decoration: none;
@@ -22,7 +23,6 @@ header {
   align-items: center;
   padding: 0 40px;
   height: 6rem;
-  background-color: aqua;
 }
 
 nav > ul {
@@ -51,6 +51,74 @@ a {
   display: none;
   background: none;
   border: none;
-  font-size: 28px;
   cursor: pointer;
+  font-size: 28px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 20;
+}
+
+/*HERO SECTION*/
+
+.hero-section {
+  background-image: url("https://shop.mango.com/cms-assets/v3/assets/blt351b9b24ac05a648/blt43edf8ea050f42de/684148fb0cfe9c2f604b25ef/Home_mm_w_(8).jpg?imdensity=1&im=RegionOfInterestCrop,width=1656,height=710,regionOfInterest=(1424.1100000000001,619.2)");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(46, 46, 46, 0.499);
+  background-blend-mode: darken;
+  width: 100%;
+  height: 80vh;
+  color: var(--princial);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.hero-section > nav > ul > li > a {
+  color: var(--princial);
+}
+.men {
+  background-image: url("https://shop.mango.com/cms-assets/v3/assets/blt351b9b24ac05a648/bltbee606f297e76d71/688c9ecc8c750140bd8da51e/LANDING-NNOTRANTO2.jpg?imdensity=1&im=RegionOfInterestCrop,width=1656,height=710,regionOfInterest=(2332.5,1000)");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.teen {
+  background-image: url("https://shop.mango.com/cms-assets/v3/assets/blt351b9b24ac05a648/blt541d12092eeb0efb/68904e97fcf5412fd2c1dfa0/17034076_96_O2.jpg?imdensity=1&im=RegionOfInterestCrop,width=1656,height=710,regionOfInterest=(2799,1000)");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.kids {
+  background-image: url("https://shop.mango.com/cms-assets/v3/assets/blt351b9b24ac05a648/blte7882dca5320ccbb/68904f1fa3bcd13bfa26ae5c/17074424_50_O.jpg?imdensity=1&im=RegionOfInterestCrop,width=1656,height=710,regionOfInterest=(2332.5,1000)");
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+a[data-category] {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+a[data-category]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+a[data-category]:hover::after {
+  width: 100%;
 }
